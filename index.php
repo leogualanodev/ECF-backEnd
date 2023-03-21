@@ -9,8 +9,16 @@ if ( !empty($_GET) && isset($_GET)) {
     } else if ( !empty($_GET["action"] === 'connexion')){
         require_once __DIR__ . './src/controllers/loginCont.php';
         getViewLogin();
-
-    }
+    } else if ( !empty($_GET['action'] === 'profil')){
+        require_once __DIR__ . './src/controllers/profilCont.php';
+        getViewProfi();
+    } else if ( !empty($_GET['action'] === 'disconnect')){
+        require_once __DIR__ . './src/controllers/disconnectCont.php';
+        getViewDisconnect();
+    } else if ( !empty($_GET['action'] === 'Forum')){
+        require_once __DIR__ . './src/controllers/forumCont.php';
+        getViewForum();
+    } 
 } else {
     require_once __DIR__ . './src/controllers/homePageCont.php';
     getViewHomepage();

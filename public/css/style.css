@@ -187,6 +187,7 @@ header a {
     border: 1px solid #df4937;
     font-size: 20px;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 #submit_register input:hover {
@@ -254,6 +255,7 @@ header a {
     border: 1px solid #df4937;
     font-size: 20px;
     border-radius: 10px;
+    cursor: pointer;
 
 }
 

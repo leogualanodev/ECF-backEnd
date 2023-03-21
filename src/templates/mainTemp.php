@@ -19,7 +19,7 @@
             
                 <a href="./">Accueil</a>
                 <a href="">Forum</a>
-                <a href="">About the project</a>
+                <a href="">Le projet</a>
             
         </div>
         <div id="nav">

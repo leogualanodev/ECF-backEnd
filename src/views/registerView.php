@@ -5,7 +5,7 @@ $title = 'Inscription' ;
 ob_start(); ?>
 
 <div>
-    <a href="./?action=connexion">Se connecter</a>
+    <a class="button-home" href="./?action=connexion">Se connecter</a>
 </div>
 <?php
 $nav = ob_get_clean();
@@ -42,8 +42,7 @@ ob_start(); ?>
                 <input type="password" name="confirmpassword">
             </div>
         </div>
-        <div id="select">
-            
+        <div id="select">            
                 <p> <span>“La méfiance est mère de la sûreté.” </span> : Voici un petit questionnaire, en espérant que vous êtes un chat ..</p>
                 <?php if ( !empty($errors["question"])) { ?>
                     <div class="erreur"> <?= $errors['question'] ?></div>
@@ -68,8 +67,7 @@ ob_start(); ?>
             </div>
         </div>
         <div id="submit_register">
-            <input type="submit" value="Inscription">
-            
+            <input type="submit" value="Inscription">            
         </div>
     </form>
 
