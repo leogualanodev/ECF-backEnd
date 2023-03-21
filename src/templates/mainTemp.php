@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./public/css/styleHome.css">
+    <link rel="stylesheet" href="./public/css/style.css">
     <title><?= $title ?></title>
 </head>
 <body>
@@ -18,7 +18,7 @@
         <div id="menu">
             
                 <a href="./">Accueil</a>
-                <a href="">Topics</a>
+                <a href="">Forum</a>
                 <a href="">About the project</a>
             
         </div>
@@ -29,13 +29,13 @@
     </nav>
 </header>
 
-<section>
-    <?= $zone_flot ?>
-</section>
 
-<section>
+    <?= $zone_flot ?>
+
+
+
     <?= $content ?>
-</section>
+
 
 <footer>
     <div>

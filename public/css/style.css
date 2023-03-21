@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+/*************** STYLE HOME PAGE *************/
+
+
+header {
+    border-bottom: 1px solid black;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1240px;
+    margin: auto;
+}
+
+#logo {
+    display: flex;
+    padding: 10px;
+    width: 33%;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+#logo p {
+    margin-left: 10px;
+    color: #df4937 ;
+    font-weight: bold;
+}
+
+#logo img {
+    width: 75px;
+}
+
+#menu {
+    display: flex;
+    justify-content: space-around;
+    width: 33%;
+    margin: auto;
+    text-transform: uppercase;
+}
+
+#nav {
+    width: 33%;
+}
+
+#nav div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.button-home {
+    padding: 10px;
+    margin: 10px 5px;
+    background-color: #df4937 ;
+    color: white;
+    border-radius: 5px;
+    border: 1px solid #df4937;
+}
+
+.button-home:hover {
+    background-color: white;
+    color: black;
+}
+
+header a {
+    text-decoration: none;
+    color: black;
+}
+
+#profil {
+    background-color:none !important;
+    color: #df4937 !important;
+    border: none !important;
+     font-weight: 700;
+}
+
+#profil:hover {
+    font-size: 20px;
+}
+
+
+/***************** STYLE REGISTER ****************/
+
+
+#register {
+    width: 50%;
+    margin: auto;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    background-color: #eeeeee;
+}
+
+#inputs {
+    display: flex;
+    justify-content: space-around;
+}
+
+#inputs div {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+
+#inputs div p {
+    width: 75%;
+    margin: auto;
+    padding: 5px;
+}
+
+#inputs input {
+    width: 75%;
+    margin: 10px auto;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+}
+
+#h1_register {
+    text-align: center;
+    color: #df4937;
+    font-weight: 700;
+    margin: 25px;
+}
+
+#select p {
+    width: 75%;
+    margin: auto;
+    text-align: center;
+    margin-top: 30px;
+    
+}
+
+#select span {
+    color: #df4937;
+    font-weight: 700;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    margin: auto;
+}
+
+.options select {
+    width: 40%;
+    padding: 5px;
+    margin-top: 10px;
+}
+
+.options label {
+    margin-top: 15px;
+    font-size: 15px;
+}
+
+#submit_register {
+    width: 35%;
+    margin: 50px auto;
+    display: flex;
+    justify-content: center;
+    
+}
+
+#submit_register input {
+    width: 50%;
+    margin: auto;
+    padding: 12px;
+    background-color: #df4937;
+    color: white;
+    border: 1px solid #df4937;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+#submit_register input:hover {
+    background-color: white;
+    color: black;
+}
+
+.erreur {
+    width: 75%;
+    margin: auto;
+    color: #df4937;
+    font-size: 12px;
+}
+
+
+/***************** STYLE CONNEXION  ****************/
+
+
+#login {
+    width: 30%;
+    margin: auto;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    background-color: #eeeeee;
+    padding: 20px;
+}
+
+#h1_login {
+    text-align: center;
+    color: #df4937;
+    font-weight: 700;
+    margin: 25px;
+}
+
+#login div {
+    width: 75%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#login p {
+    margin-top: 15px;
+    text-align: center;
+}
+
+#login div input {
+    margin-top: 10px;
+    height: 30px;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+}
+
+
+#submit_login {
+    width: 30%;
+    margin: 50px auto;
+    padding: 12px;
+    background-color: #df4937;
+    color: white;
+    border: 1px solid #df4937;
+    font-size: 20px;
+    border-radius: 10px;
+
+}
+
+#submit_login:hover {
+    background-color: white;
+    color: black;
+}
