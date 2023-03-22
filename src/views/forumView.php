@@ -5,7 +5,7 @@ if ( isset($_SESSION["pseudo"]) && !empty($_SESSION["pseudo"])){
     ob_start(); ?>
     <div>
         <img src="" alt="">
-        <p>Bonjour <a id="profil" href="index.php?action=profil"><?= $_SESSION['pseudo'] ?></a></p>
+        <p>Bonjour <a id="profil" href="./?action=profil"><?= $_SESSION['pseudo'] ?></a></p>
     </div>
 <?php $nav = ob_get_clean(); 
 } else {
@@ -38,7 +38,7 @@ ob_start(); ?>
 
 for ( $i = 0 ; $i < count($data) ; $i++) { ?>
     <div class='content_data'>
-        <a href="index.php?action=forum&id=<?= $data[$i]["id"]?>" class="subject">
+        <a href="./?action=forum&id=<?= $data[$i]["id"]?>" class="subject">
             <p><?= $data[$i]['name'] ?></p>
         </a>
         <div class="count">

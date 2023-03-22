@@ -22,6 +22,15 @@ if ( !empty($_GET) && isset($_GET)) {
         require_once __DIR__ . './src/controllers/forumCont.php';
         $id = $_GET['id'];
         getViewThisSubject($id);
+    } else if ( !empty($_GET["action"] === 'post') && isset($_GET['id'])){
+        require_once __DIR__ . './src/controllers/forumCont.php';
+        $id_topic = $_GET["id"];
+        $id_user = $_SESSION['id'];
+        getViewPost($id_topic , $id_user);
+    } else if ( !empty($_GET["action"] === 'discussion') && isset($_GET['id'])){
+        require_once __DIR__ . './src/controllers/forumCont.php';
+        $id = $_GET["id"];
+        getViewThisPost($id);
     }
 } else {
     require_once __DIR__ . './src/controllers/homePageCont.php';

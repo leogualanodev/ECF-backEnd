@@ -31,4 +31,25 @@ class Topics extends Database {
       return $data;
   }
 
+  // fonction qui ajoute un sous topic dans la base de donnée
+  public function addPost($id_topic , $id_user , $title , $description) {
+    $addPost = $this->pdo->prepare("INSERT INTO sous_topic (id_topic , id_felin , name_sous , question) VALUES ( :id_topic , :id_user , :title , :descrip )");
+    $addPost->bindParam(':id_topic' , $id_topic );
+    $addPost->bindParam(':id_user' , $id_user );
+    $addPost->bindParam(':title' , $title );
+    $addPost->bindParam(':descrip' , $description );
+    $addPost->execute();
+  }
+
+  // fonction qui récupère la discussion selectionné par l'utilisateur 
+  public function getThisPost ($id) {
+    $getThisPost = $this->pdo->prepare("SELECT * FROM sous_topic LEFT JOIN comment ON sous_topic.id_sous=comment.id_soustopic LEFT JOIN felins ON felins.id = comment.id_felin WHERE sous_topic.id_sous=:id");
+    $getThisPost->bindParam(':id' , $id );
+    $getThisPost->execute();
+    $data = $getThisPost->fetchAll();
+
+    return $data ;
+
+
+  }
 }

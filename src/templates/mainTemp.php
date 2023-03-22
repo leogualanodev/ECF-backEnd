@@ -18,7 +18,7 @@
         <div id="menu">
             
                 <a href="./">Accueil</a>
-                <a href="index.php?action=forum">Forum</a>
+                <a href="./?action=forum">Forum</a>
                 <a href="">Le projet</a>
             
         </div>
