@@ -263,3 +263,75 @@ header a {
     background-color: white;
     color: black;
 }
+
+
+/************** STYLE PAGE FORUM ****************/
+
+
+#container_title {
+    max-width: 1240px;
+    margin: 50px auto;
+}
+
+#container_title h1 {
+    color: #df4937;
+    font-weight: bold;
+    text-align: center;
+    padding: 25px;
+}
+
+#container_title p {
+    letter-spacing: 3px;
+    font-weight: 400;
+    padding: 20px;
+}
+
+#container_content {
+    max-width: 1240px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+#content_title {
+    display: flex;
+    border: 2px solid black;
+    
+}
+
+#content_title div {
+    text-align: center;
+}
+
+#content_title p {
+    color: #df4937;
+    font-weight: bold;
+}
+
+.content_data {
+    display: flex;
+    border: 1px solid black;
+    background-color: #eeeeee;
+}
+
+.content_data a {
+    color: black;
+    text-decoration: none;
+}
+
+.subject {
+    width: 75%;
+    padding: 20px;
+    border-right: 1px solid black;
+}
+
+.content_data .subject:hover {
+    background-color: #df4937;
+    color: white;
+    cursor: pointer;
+}
+
+.count {
+    width: 25%;
+    padding: 20px;
+    text-align: center;
+}

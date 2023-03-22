@@ -29,6 +29,7 @@ function getViewLogin () {
 
         if (empty($password)){
             $errors['error'] = 'Veuillez rentrez votre mot de passe';
+            
         } 
 
 

@@ -15,10 +15,14 @@ if ( !empty($_GET) && isset($_GET)) {
     } else if ( !empty($_GET['action'] === 'disconnect')){
         require_once __DIR__ . './src/controllers/disconnectCont.php';
         getViewDisconnect();
-    } else if ( !empty($_GET['action'] === 'Forum')){
+    } else if ( !empty($_GET['action'] === 'forum') && (!isset($_GET["id"]) || empty($_GET["id"]))){
         require_once __DIR__ . './src/controllers/forumCont.php';
         getViewForum();
-    } 
+    } else if ( !empty($_GET['action'] === 'forum') && isset($_GET["id"])){
+        require_once __DIR__ . './src/controllers/forumCont.php';
+        $id = $_GET['id'];
+        getViewThisSubject($id);
+    }
 } else {
     require_once __DIR__ . './src/controllers/homePageCont.php';
     getViewHomepage();
