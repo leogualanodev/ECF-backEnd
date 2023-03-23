@@ -1,5 +1,6 @@
 <?php
-
+var_dump($data);
+var_dump($info);
 $title = '';
 
 if ( isset($_SESSION["pseudo"]) && !empty($_SESSION["pseudo"])){
@@ -26,6 +27,10 @@ ob_start(); ?>
 
     <div>
         <div>
+            <img src="./public/image/imports/<?= $info[0]['avatar']?>" alt="">
+            <p> <?= $info[0]["pseudo"] ?></p>
+        </div>
+        <div>
             <h1><?= $data[0]['name_sous'] ?></h1>
             <p> <?= $data[0]['question'] ?></p>
         </div>
@@ -33,6 +38,7 @@ ob_start(); ?>
             <p><?= $data[0]['date_sous'] ?></p>
         </div>
     </div>
+    <div>
 <?php 
 if ( $data[0]["id_soustopic"] === null ){
 
@@ -41,15 +47,24 @@ for ( $i = 0 ; $i < count($data) ; $i++){
 ?>
 <!-- on affiche les réponses du post -->
     <div>
-        <p><?= $data[$i]["pseudo"] ?></p>
-    </div>    
+        <div>
+            <img src="./public/image/imports/<?= $data[$i]['avatar']?>" alt="" >
+            <p><?= $data[$i]["pseudo"] ?></p>
+        </div>
+        <div>
+            <p><?= $data[$i]["reponse"] ?></p>
+            <p><?= $data[$i]["date"] ?></p>
+        </div> 
+    </div>   
 <?php
 }
 }
-
+?>
+</div>
+<?php
 if ( isset($_SESSION["pseudo"]) && !empty($_SESSION["pseudo"])){ ?>
-        <form action="">
-            <input type="text">
+        <form action="./?action=comment&id=<?= $data[0]["id_sous"] ?>" method='post'>
+            <textarea  name='reponse' cols="30" rows="5"></textarea>
             <input type="submit">
         </form>
 

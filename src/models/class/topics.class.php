@@ -52,4 +52,23 @@ class Topics extends Database {
 
 
   }
+  // fonction qui récupère les infos de l'user qui a mis le sous topic
+  public function getInfoSoustopic ( $id ) {
+    $getInfoSoustopic = $this->pdo->prepare("SELECT * FROM felins INNER JOIN sous_topic ON felins.id= sous_topic.id_felin WHERE sous_topic.id_sous =:id ");
+    $getInfoSoustopic->bindParam(':id' , $id ); 
+    $getInfoSoustopic->execute();
+
+    $data =  $getInfoSoustopic->fetchAll();
+    return $data;
+  }
+
+  // Fonction qui ajoute un commentaire à un sous topic
+  public function addComment($comment , $id_soustopic , $id_user) {
+    $addComment = $this->pdo->prepare("INSERT INTO comment ( id_soustopic , id_felin , reponse ) VALUES ( :id_soustopic , :id_user , :comment )");
+    $addComment->bindParam(':id_soustopic' , $id_soustopic );
+    $addComment->bindParam(':id_user' , $id_user );
+    $addComment->bindParam(':comment' , $comment );
+    $addComment->execute();
+
+  }
 }

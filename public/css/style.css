@@ -335,3 +335,114 @@ header a {
     padding: 20px;
     text-align: center;
 }
+
+
+/**************** STYLE TOPICS  *************/
+
+
+#h1_forum {
+    text-align: center;
+    color: #df4937;
+    margin: 50px;
+}
+
+#form_post {
+    width: 40%;
+    margin: 25px auto;
+    background-color: #eeeeee;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+#form_post h2 {
+    text-align: center;
+    padding: 15px;
+}
+
+.inputs_post {
+    width: 60%;
+    margin: 10px 0px;
+    padding: 10px;
+}
+
+
+
+#button_post {
+    width: 25%;
+    margin: 30px auto 15px auto;
+    padding: 15px;
+    background-color: #df4937;
+    border: 1px solid #df4937;
+    color: white;
+    font-size: 15px;
+    border-radius: 10px;
+}
+
+#button_post:hover {
+    background-color: white;
+    color: black;
+}
+
+#container_soustopic {
+    max-width: 1240px;
+    margin: 50px auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+    
+}
+
+#h2_soustopic {
+    text-align: center;
+    padding: 15px;
+
+}
+
+.soustopic {
+    width: 20%;
+    background-color: #eeeeee;
+    margin: 25px;
+    padding: 15px;
+    min-height: 300px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    position: relative;  
+}
+
+
+.soustopic a {
+    position: absolute;
+    bottom: 0;
+    right: 0%;
+    text-decoration: none;
+    background-color: #df4937;
+    color: white;
+    padding: 10px;
+    border-radius: 10px 0 0 0;
+    border: 1px solid #df4937;
+}
+
+.soustopic a:hover{
+    background-color: white;
+    color: #df4937;
+}
+
+.date_soustopic {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+    font-size: 12px;
+}
+
+.question {
+    margin-top: 15px;
+}
+
+
+/**************** STYLE DISCUSSION *******************/
+

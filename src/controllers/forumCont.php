@@ -66,6 +66,38 @@ function getViewPost ($id_topic , $id_user){
 function getViewThisPost ($id) {
     $topics = new Topics();
     $data = $topics->getThisPost($id);
+    $info = $topics->getInfoSoustopic($id);
     require_once __DIR__.'./../views/postView.php';
 
+}
+
+function getViewComment ($id_soustopic , $id_user) {
+    //on vérifier si la method d'envoie du formulaire est bien post
+    if( $_SERVER['REQUEST_METHOD'] === 'POST'){
+
+        // on récupère les entrées de l'user
+        $input = filter_input_array(INPUT_POST , [
+            'reponse' => FILTER_SANITIZE_SPECIAL_CHARS,
+        ]);
+
+        $comment = $input['reponse'];
+
+        // on définie la variable d'erreur
+        $errors['erreur'] = '';
+
+        if ( empty($comment)) {
+            $errors['erreur'] = "Veuillez ajouter un commentaire";
+        }
+        // la limite en bdd est de 255 
+        if ( strlen($comment) > 254 ) {
+            $errors['erreur'] = "Veuillez être plus succinct";
+        }
+        // si pas d'erreur alors on ajoute le commentaire a la bdd
+        if (empty(array_filter($errors, fn ($e) => $e !== ''))) {
+            $topics = new Topics();
+            $topics->addComment($comment , $id_soustopic , $id_user );
+        }
+    }
+    // on redirige l'utilisateur vers la page de la discussion 
+    header("location: ./?action=discussion&id=$id_soustopic");
 }

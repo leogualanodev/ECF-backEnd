@@ -31,6 +31,11 @@ if ( !empty($_GET) && isset($_GET)) {
         require_once __DIR__ . './src/controllers/forumCont.php';
         $id = $_GET["id"];
         getViewThisPost($id);
+    } else if ( !empty($_GET["action"] === 'comment') && isset($_GET['id'])){
+        require_once __DIR__ . './src/controllers/forumCont.php';
+        $id_soustopic = $_GET["id"];
+        $id_user = $_SESSION["id"];
+        getViewComment($id_soustopic , $id_user);
     }
 } else {
     require_once __DIR__ . './src/controllers/homePageCont.php';

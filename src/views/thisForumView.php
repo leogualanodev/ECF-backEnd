@@ -1,7 +1,7 @@
 <?php
 
 
-var_dump($data);
+
 
 $title = $data[0]['name'] ;
 if ( isset($_SESSION["pseudo"]) && !empty($_SESSION["pseudo"])){
@@ -21,21 +21,21 @@ if ( isset($_SESSION["pseudo"]) && !empty($_SESSION["pseudo"])){
     <?php $nav = ob_get_clean();
 }
 ob_start(); ?>
-<h1><?= $data[0]['name']?></h1>
+<h1 id="h1_forum"><?= $data[0]['name']?> ..</h1>
 <?php
 if (isset($_SESSION["pseudo"]) && !empty($_SESSION["pseudo"])){ ?>
     
     
-    <form action="index.php?action=post&id=<?= $data[0]['id'] ?>" method='post'>
+    <form id="form_post" action="./?action=post&id=<?= $data[0]['id'] ?>" method='post'>
         <h2>Parle du sujet, lance toi !! </h2>
         <?php if ( !empty($errors["erreur"])) { ?>
                     <div class="erreur"> <?= $errors['erreur'] ?></div>
         <?php } ?>
         <p>Titre du topic :</p>
-        <input type="text" placeholder="Votre titre" name='title'>
+        <input class='inputs_post' type="text" placeholder="Votre titre" name='title'>
         <p>Votre question ou pensée ..</p>
-        <textarea  name='description' cols="30" rows="5"></textarea>
-        <input type="submit" value="Créer le sujet">
+        <textarea class="inputs_post"  name='description' cols="30" rows="5"></textarea>
+        <input id="button_post" type="submit" value="Créer le sujet">
         
     </form>
 
@@ -46,23 +46,31 @@ $zone_flot = ob_get_clean();
 if ( $data[0]["question"] === null){
     $content = '';
 } else {
-    ob_start();
-    for ( $i = 0 ; $i < count($data) ; $i++ ) {?>
-        <div>
+    ob_start(); ?>
+    <h2 id="h2_soustopic">Les différents sujet de nos amis Félins :</h2>
+    <div id="container_soustopic">
+    
+ <?php   for ( $i = 0 ; $i < count($data) ; $i++ ) {
+        $new_date = date(" d-m-Y à H:i", strtotime($data[$i]['date_sous']));?>
+        <div class="soustopic">
             <div>
                 <h3><?= $data[$i]['name_sous'] ?></h3>
-                <p><?= $data[$i]['date_sous'] ?></p>
+                <p class="date_soustopic">le<?= $new_date ?></p>
             </div>
-            <div>
+            <div class="question">
                 <p><?= $data[$i]['question'] ?></p>
             </div>
             <div>
-                <a href="./?action=discussion&id=<?= $data[$i]['id_sous']  ?>">Voir la discussion</a>
+                <a href="./?action=discussion&id=<?= $data[$i]['id_sous']  ?>">Voir</a>
             </div>
         </div>
+    
 
 <?php
 }
+?>
+</div>
+<?php
 $content = ob_get_clean();
 }
 
