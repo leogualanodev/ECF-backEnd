@@ -5,6 +5,8 @@ if ( !isset($_SESSION["pseudo"]) || empty($_SESSION["pseudo"])){
 }
 $title = $_SESSION["pseudo"] ;
 
+
+
 ob_start(); ?>
 
 <div>
@@ -45,7 +47,7 @@ ob_start(); ?>
         </div>
       </form>
 
-      <form class="form-modif" action="./?action=editProfil&travail=editAvatar" method="post" enctype="multipart/form-data">
+      <form class="form-modif" action="./?action=editAvatar&travail=editAvatar" method="post" enctype="multipart/form-data">
         <div class='relative'>
       <h2>Modifier votre avatar :</h2>
             <?php if ( !empty($_SESSION['erreurAvatar'])){ ?>
@@ -65,11 +67,11 @@ ob_start(); ?>
     </form>
   
   
-    <form class="form-modif" action="./?action=editProfil&travail=editMdp" method="POST">
+    <form class="form-modif" action="./?action=editProfil&travail=editMdp" method="post">
       <div class="relative">
       <h2>Modifier Votre mot de passe :</h2>
-          <?php if ( !empty($_SESSION['erreur'])){ ?>
-        <div class="retourmodif"><?=   $_SESSION['erreur'] ?></div>
+          <?php if ( !empty($_SESSION['erreurMdp'])){ ?>
+        <div class="retourmodif"><?=   $_SESSION['erreurMdp'] ?></div>
       <?php } ?>
       <?php if ( !empty($_SESSION['validateMdp'])){ ?>
         <div class="retourmodif"><?=   $_SESSION['validateMdp'] ?></div>
@@ -97,7 +99,49 @@ ob_start(); ?>
       
    
   </div>
+  
 </section>
+
+<?php if (empty($sous_topic)) { ?>
+
+  <?php } else { ?>
+    <div>
+      <h2>Ici vos Sous topic :</h2>
+      <div>
+      <?php for ( $i = 0 ; $i < count($sous_topic) ; $i++){ ?>
+        <div>
+          <p>le sous topic : <?= $sous_topic[$i]["name_sous"] ?></p>
+          <p>Votre question : <?= $sous_topic[$i]["question"] ?></p>
+          <a href="./?action=deletetopic&id=<?= $sous_topic[$i]["id_sous"]?>">Supprimer</a>
+        </div>
+      <?php } ?>
+      </div>
+    </div>
+    
+
+<?php } ?>
+
+<?php if (empty($comment)) { ?>
+
+<?php } else { ?>
+  <div>
+    <h2>Ici vos commentaire :</h2>
+    <div>
+      <?php for ( $i = 0 ; $i < count($comment) ; $i++){ ?>
+        <div>
+          <div>
+            <p>Le sous-topic : <?= $comment[$i]["name_sous"]  ?></p>
+          </div>
+          <div>
+            <p>Votre commentaire : <?= $comment[$i]["reponse"] ?></p>
+            <a href="./?action=deleteCom&id=<?= $comment[$i]["id_comment"] ?>">Supprimer</a>
+          </div>
+        </div>
+        <?php } ?>
+    </div>
+  </div>
+<?php } ?>
+
 
 <?php
 

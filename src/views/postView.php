@@ -2,6 +2,7 @@
 
 $newdate = date(" d-m-Y à H:i", strtotime($data[0]['date_sous']));
 
+
 $title = '';
 
 if ( isset($_SESSION["pseudo"]) && !empty($_SESSION["pseudo"])){

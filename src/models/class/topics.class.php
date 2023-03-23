@@ -77,4 +77,18 @@ class Topics extends Database {
     $addComment->execute();
 
   }
+
+  public function deleteComment ($id) {
+    $deleteComment = $this->pdo->prepare('DELETE FROM comment WHERE id_comment=:id');
+    $deleteComment->bindParam(':id' , $id );
+    $deleteComment->execute();
+
+  }
+
+  public function deleteTopic ($id) {
+    $deleteComment = $this->pdo->prepare('DELETE FROM sous_topic WHERE id_sous=:id');
+    $deleteComment->bindParam(':id' , $id );
+    $deleteComment->execute();
+
+  }
 }

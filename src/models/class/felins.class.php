@@ -52,5 +52,37 @@ class Felins extends Database
     $editFelinProfilInfo->execute();
   }
 
+  public function getCommentProfil($id){
+    $getCommentProfil = $this->pdo->prepare("SELECT * FROM comment INNER JOIN sous_topic ON sous_topic.id_sous=comment.id_soustopic WHERE comment.id_felin=:id");
+    $getCommentProfil->bindParam(":id" , $id);
+    $getCommentProfil->execute();
+    $data = $getCommentProfil->fetchAll();
+
+    return $data;
+  }
+
+  public function getSoustopicProfil($id){
+    $getSoustopicProfil = $this->pdo->prepare("SELECT * FROM sous_topic WHERE id_felin=:id");
+    $getSoustopicProfil->bindParam(":id" , $id);
+    $getSoustopicProfil->execute();
+    $data = $getSoustopicProfil->fetchAll();
+
+    return $data;
+  }
+
+  public function editFelinPassword($password , $id ) {
+    $editFelinPassWord = $this->pdo->prepare("UPDATE felins SET password=:password WHERE id=:id");
+    $editFelinPassWord->BindParam(":password", $password);
+    $editFelinPassWord->BindParam(":id", $id);
+    $editFelinPassWord->execute();
+  }
+
+  public function modifAvatarFelin( $name , $id ) {
+    $modifAvatarFelin = $this->pdo->prepare("UPDATE felins set avatar=:avatar WHERE id=:id");
+    $modifAvatarFelin->BindParam(':avatar' , $name);
+    $modifAvatarFelin->BindParam(':id' , $id);
+    $modifAvatarFelin->execute();
+  }
+
 
 }

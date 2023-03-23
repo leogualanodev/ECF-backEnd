@@ -42,6 +42,17 @@ if ( !empty($_GET) && isset($_GET)) {
     } else if ( ( !empty($_GET['action'] === 'editProfil') && isset($_GET['travail']) && $_GET['travail'] === 'editMdp')){
         require_once __DIR__ . './src/controllers/profilCont.php';
         getModifPassword();
+    } else if ( !empty($_GET["action"] === 'deleteCom') && isset($_GET['id'])){
+        require_once __DIR__ . './src/controllers/profilCont.php';
+        $id = $_GET["id"];
+        getDeleteComment($id);
+    } else if ( !empty($_GET["action"] === 'deletetopic') && isset($_GET['id'])){
+        require_once __DIR__ . './src/controllers/profilCont.php';
+        $id = $_GET["id"];
+        getDeleteTopic($id);
+    } else if ( ( !empty($_GET['action'] === 'editAvatar') && isset($_GET['travail']) && $_GET['travail'] === 'editAvatar')) {
+        require_once __DIR__ . './src/controllers/profilCont.php';
+        getModifAvatar();
     }
 } else {
     require_once __DIR__ . './src/controllers/homePageCont.php';

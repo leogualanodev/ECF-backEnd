@@ -300,6 +300,7 @@ footer p {
     margin: auto;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
     margin-top: 100px;
+    
     display: flex;
     flex-direction: column;
     background-color: #eeeeee;
