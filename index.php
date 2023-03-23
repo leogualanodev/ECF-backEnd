@@ -36,6 +36,12 @@ if ( !empty($_GET) && isset($_GET)) {
         $id_soustopic = $_GET["id"];
         $id_user = $_SESSION["id"];
         getViewComment($id_soustopic , $id_user);
+    } else if ( !empty($_GET['action'] === 'editProfil') && isset($_GET['travail']) && $_GET['travail'] === 'editInfo'){
+        require_once __DIR__ . './src/controllers/profilCont.php';
+        getModifInfo();
+    } else if ( ( !empty($_GET['action'] === 'editProfil') && isset($_GET['travail']) && $_GET['travail'] === 'editMdp')){
+        require_once __DIR__ . './src/controllers/profilCont.php';
+        getModifPassword();
     }
 } else {
     require_once __DIR__ . './src/controllers/homePageCont.php';

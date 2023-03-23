@@ -35,13 +35,21 @@ class Felins extends Database
     $felinRegistred->execute();
   }
 
-  function getInfoFelin($pseudo){
+  public function getInfoFelin($pseudo){
     $getInfoUser = $this->pdo->prepare("SELECT * FROM felins WHERE pseudo=:pseudo");
     $getInfoUser->BindParam(":pseudo", $pseudo);
     $getInfoUser->execute();
     $getInfoUser = $getInfoUser->fetchAll();
 
     return $getInfoUser;
+  }
+
+  public function editFelinProfilInfo($pseudo , $mail , $id) {
+    $editFelinProfilInfo = $this->pdo->prepare("UPDATE felins SET pseudo = :pseudo, mail = :mail WHERE id = :id");
+    $editFelinProfilInfo->BindParam(":pseudo", $pseudo);
+    $editFelinProfilInfo->BindParam(":mail", $mail);
+    $editFelinProfilInfo->BindParam(":id", $id);
+    $editFelinProfilInfo->execute();
   }
 
 

@@ -1,4 +1,5 @@
 <?php
+
 $title = 'Forum' ;
 
 if ( isset($_SESSION["pseudo"]) && !empty($_SESSION["pseudo"])){
@@ -42,7 +43,7 @@ for ( $i = 0 ; $i < count($data) ; $i++) { ?>
             <p><?= $data[$i]['name'] ?></p>
         </a>
         <div class="count">
-            <p>0</p>
+            <p><?= $data[$i]["nb_sous_topic"] ?></p>
         </div>
     </div>
 <?php    

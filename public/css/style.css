@@ -6,7 +6,7 @@
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
 }
-/*************** STYLE HOME PAGE *************/
+/*************** STYLE NAV *************/
 
 
 header {
@@ -89,6 +89,95 @@ header a {
 #profil:hover {
     font-size: 20px;
 }
+
+/************** STYLE HOMEPAGE *******************/
+
+#container_zone_flot {
+    min-height: 88vh;
+    background-image: url(./../image/imports/zone_flot.jpg);
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: space-around;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#container_zone_flot h1 {
+    width: 25%;
+    margin-left: 250px;
+    letter-spacing: 2px;
+    font-size: 30px;
+}
+#container_zone_flot h1 span {
+    color: white;
+    text-transform: uppercase;
+    text-shadow:2px 2px 3px  #df4937;
+}
+#container_zone_flot a {
+    width: 15%;
+    margin-left: 250px;
+    letter-spacing: 2px;
+    font-size: 20px;
+    background-color: white;
+    color: #df4937;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 20px 10px;
+    text-align: center;
+    border: 1px solid #df4937;
+    border-radius: 10px;
+}
+#container_zone_flot a:hover {
+    background-color: #df4937;
+    color: rgb(255, 255, 255);
+}
+
+#container_projet {
+    max-width: 1240px;
+    margin: 50px auto;
+    
+}
+
+#container_projet div {
+    display: flex;
+    padding: 25px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#container_projet figure {
+    width: 50%;
+}
+#container_projet img {
+    width: 400px;
+}
+#container_projet p {
+    padding: 30px;
+}
+
+/*************** STYLE FOOTER *****************/
+
+footer {
+    margin-top: 100px;
+    background-color: #eeeeee;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+footer p {
+    color: #df4937;
+    
+}
+
 
 
 /***************** STYLE REGISTER ****************/
@@ -445,4 +534,203 @@ header a {
 
 
 /**************** STYLE DISCUSSION *******************/
+
+.container_discussion {
+    max-width: 1240px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: #eeeeee;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    margin-top: 50px;
+    padding: 20px;
+}
+
+.container_discussion h1{
+    color: #df4937;
+}
+
+.container_discussion img {
+    width: 100px;
+    border-radius: 25px;
+    padding: 10px;
+}
+
+#img_pseudo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#flex_image{
+    display: flex;
+    align-items: center;
+    
+}
+
+#question_felin {
+    font-size: 22px;
+    margin-top: 15px;
+}
+
+.container_comment {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.image_pseudo_comment {
+    display: flex;
+    align-items: center;
+    
+}
+
+
+.comment_reponse {
+    font-size: 18px;
+}
+
+.comment_pseudo {
+    color: #df4937;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#form_comment {
+    max-width: 1240px;
+    margin: auto;
+    background-color: #eeeeee;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+#form_comment textarea {
+    width: 50%;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+#form_comment input {
+    width: 15%;
+    margin-top: 20px;
+    background-color: #df4937;
+    border: 1px solid #df4937;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#form_comment input:hover {
+    background-color: #ffffff;
+    color: #df4937;  
+}
+
+
+/******************** STYLE PROFIL ****************/
+
+.container-modif {
+    width: 1240px;
+    margin:  auto;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 100px;
+}
+
+.form-modif {
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+    width: 30%;
+    padding: 15px;
+    background-color: #f7f7f7;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    
+}
+.container-modif h2 {
+    font-size: 18px;
+    text-align: center;
+    padding: 15px 0 0 0;
+}
+
+.form-modif p {
+    font-size: 15px;
+    text-align: center;
+    padding-top: 15px;
+   
+}
+
+.form-modif div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-modif div input {
+   
+   width: 70%;
+   margin: auto;
+   margin-top: 15px;
+   padding-left: 10px;
+   padding: 5px 10px;
+   border: none;
+   color: grey;
+}
+
+.retourmodif {
+    text-align: center;
+    font-size: 10px;
+    color: #df4937;
+    position: absolute;
+    top:35px;    
+    
+}
+.relative {
+    position: relative;
+}
+
+.modifier-info {
+    position: relative;
+    bottom: 0;
+    margin-top: 15px !important;
+    width: 50% !important;
+    margin: auto;
+    padding: 10px !important;
+    background-color: #df4937 !important;
+    border: 1px solid white !important;
+    color: white !important;
+    border: 1px solid #df4937 !important;
+}
+
+.modifier-info1 {
+    position: relative;
+    bottom: -51px;
+    margin-top: 15px !important;
+    width: 50% !important;
+    margin: auto;
+    padding: 10px !important;
+    background-color: #df4937 !important;
+    border: 1px solid white !important;
+    color: white !important;
+    border: 1px solid #df4937 !important;
+   
+}
+
+.modifier-info:hover {
+    background-color: white !important;
+    color: #df4937 !important;
+    
+}
+
+.modifier-info1:hover {
+    background-color: white !important;
+    color: #df4937 !important;
+}
+
+
 

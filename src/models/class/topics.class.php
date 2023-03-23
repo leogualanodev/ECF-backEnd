@@ -13,7 +13,7 @@ class Topics extends Database {
   }
   // foncion qui récupère tous les sujets du forum
   public function getTopics () {
-      $getTopics = $this->pdo->prepare("SELECT * FROM topics ");
+      $getTopics = $this->pdo->prepare("SELECT *  , COUNT(sous_topic.id_topic) AS nb_sous_topic FROM topics LEFT JOIN sous_topic ON topics.id=sous_topic.id_topic GROUP BY topics.name ");
       $getTopics->execute();
       $data = $getTopics->fetchAll();
 
@@ -52,7 +52,13 @@ class Topics extends Database {
 
 
   }
-  // fonction qui récupère les infos de l'user qui a mis le sous topic
+  // 
+  /**
+   * fonction qui récupère les infos de l'user qui a mis le sous topic
+   * 
+   * @param int $id id du sous topic 
+   * @return array infos sous topics
+   */
   public function getInfoSoustopic ( $id ) {
     $getInfoSoustopic = $this->pdo->prepare("SELECT * FROM felins INNER JOIN sous_topic ON felins.id= sous_topic.id_felin WHERE sous_topic.id_sous =:id ");
     $getInfoSoustopic->bindParam(':id' , $id ); 

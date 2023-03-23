@@ -19,7 +19,7 @@
             
                 <a href="./">Accueil</a>
                 <a href="./?action=forum">Forum</a>
-                <a href="">Le projet</a>
+               
             
         </div>
         <div id="nav">
@@ -39,11 +39,11 @@
 
 <footer>
     <div>
-        <a href="">
-            <img src="" alt="">
+        <a href="https://github.com/leogualanodev">
+            <img src="./public/image/imports/github.png" alt="">
         </a>
-        <a href="">
-            <img src="" alt="">
+        <a href="https://www.wired.com/images_blogs/dangerroom/images/2007/06/20/cat_sniper.jpg">
+            <img src="./public/image/imports/cat.png" alt="">
         </a>
     </div>
     <div>
