@@ -10,7 +10,7 @@ $title = $_SESSION["pseudo"] ;
 ob_start(); ?>
 
 <div>
-    <a class="button-home" href="./?action=disconnect">Se déconnecter</a>
+    <a class="button-home" href="./disconnect">Se déconnecter</a>
 </div>
 <?php
 $nav = ob_get_clean();
