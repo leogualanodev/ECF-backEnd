@@ -2,13 +2,15 @@
 
 $title = 'Forum' ;
 
+// si utilisateur connecté il peut accéder a son profil
 if ( isset($_SESSION["pseudo"]) && !empty($_SESSION["pseudo"])){
     ob_start(); ?>
     <div>
         <img src="" alt="">
         <p>Bonjour <a id="profil" href="./?action=profil"><?= $_SESSION['pseudo'] ?></a></p>
     </div>
-<?php $nav = ob_get_clean(); 
+<?php $nav = ob_get_clean();
+// si utilisateur non connecté bouton lui permettant de s'inscrire et de se connecter
 } else {
     ob_start(); ?>
     <div>
@@ -20,6 +22,8 @@ if ( isset($_SESSION["pseudo"]) && !empty($_SESSION["pseudo"])){
 }
 
 $zone_flot='';
+
+// $data represente les topics , on les affiche en HTML
 ob_start(); ?>
     <div id='container_title'>
         <h1>Ici nos sujets de domination ...</h1>
@@ -54,6 +58,7 @@ for ( $i = 0 ; $i < count($data) ; $i++) { ?>
 
 $content = ob_get_clean(); 
 
+// on appelle le template du site 
 require_once __DIR__.'./../templates/mainTemp.php';
 
 

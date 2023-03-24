@@ -3,7 +3,9 @@
 // ce controller servira a gérer les sujets et les questions
 require_once __DIR__ . './../models/autoload.php';
 
-
+/**
+ * Fonction qui récupère les topics et qui appelle la vue Forum
+ */
 function getViewForum () {
     $topics = new Topics();
     $data = $topics->getTopics();
@@ -11,6 +13,10 @@ function getViewForum () {
 
 }
 
+/**
+ * fonction qui récupère les sous topics d'un topic
+ * fonction qui redirige vers la page des sous topics
+ */
 function getViewThisSubject ($id) {
     $topics = new Topics();
     $data = $topics->getThisTopics($id);
@@ -18,6 +24,13 @@ function getViewThisSubject ($id) {
 
 }
 
+/**
+ * fonction qui controle l'ajout d'un sous topic
+ * fonction qui redirige vers le sous topic en question
+ * 
+ * @param int $id_topic id du topic 
+ * @param int $id_user id de l'user qui ajoute le sous topic
+ */
 function getViewPost ($id_topic , $id_user){
     //on vérifier si la method d'envoie du formulaire est bien post
     if( $_SERVER['REQUEST_METHOD'] === 'POST'){
@@ -63,6 +76,11 @@ function getViewPost ($id_topic , $id_user){
     header("location: ./?action=forum&id=$id_topic");
 }
 
+/**
+ * fonction qui redirige vers la vue du sous topic (et ses commentaires)
+ * 
+ * @param int $id id du sous topic 
+ */
 function getViewThisPost ($id) {
     $topics = new Topics();
     $data = $topics->getThisPost($id);
@@ -71,6 +89,13 @@ function getViewThisPost ($id) {
 
 }
 
+/**
+ * fonction qui redirige vers la vue du sous topic (et ses commentaires)
+ * fonction qui vérifie l'ajout d'un commentaire sur le sous topic par l'user
+ * 
+ * @param int $id_soustopic id du sous topic 
+ * @param int $id_user id de l'user
+ */
 function getViewComment ($id_soustopic , $id_user) {
     //on vérifier si la method d'envoie du formulaire est bien post
     if( $_SERVER['REQUEST_METHOD'] === 'POST'){

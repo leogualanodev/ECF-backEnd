@@ -8,6 +8,9 @@
     <title><?= $title ?></title>
 </head>
 <body>
+    
+<!-- Template du site : déclaration de variables (remplie par les vues)  -->
+<!-- $nav , $content , $zone_flot , $title : varie en fonction des actions sur le site-->
 
 <header>
     <nav>
@@ -15,25 +18,18 @@
             <img src="./public/image/imports/logo.jpg" alt="logo-forum">
             <p>ChatForum</p>
         </div>
-        <div id="menu">
-            
-                <a href="./">Accueil</a>
-                <a href="./?action=forum">Forum</a>
-               
-            
+        <div id="menu">          
+            <a href="./">Accueil</a>
+            <a href="./?action=forum">Forum</a> 
         </div>
         <div id="nav">
             <?= $nav ?>
         </div>
-        
     </nav>
 </header>
 
 
     <?= $zone_flot ?>
-
-
-
     <?= $content ?>
 
 
@@ -48,8 +44,7 @@
     </div>
     <div>
         <p>Pour la dominance des chats dans le monde</p>
-    </div>
-    
+    </div>  
 </footer>
 
 

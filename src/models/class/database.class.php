@@ -1,5 +1,6 @@
 <?php
 
+// class qui fait la connexionà la base de donnée
 class Database
 {
   private $host = '127.0.0.1';

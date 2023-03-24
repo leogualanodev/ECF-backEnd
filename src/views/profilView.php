@@ -17,13 +17,9 @@ $nav = ob_get_clean();
 $zone_flot = '';
 ob_start(); ?>
 
+<!-- affaichage des formulaire de modifcation des informations générale de l'user -->
 <section class="container-modif">
-  <!-- <div id="formProfil">
-    <h1>Votre profil</h1>
-    <p class="para">Modifier votre profil</p>
-    <img src="./public/image/import/<?= $_SESSION['avatar'] ?? 'avatar_default.png'; ?>" alt=""> -->
-  
-
+ 
     <form class="form-modif" action="./?action=editProfil&travail=editInfo" method="post">
     <h2>Modifer votre pseudo et votre mail :</h2>
     <?php if ( !empty($_SESSION['erreurInfo'])){ ?>
@@ -101,17 +97,17 @@ ob_start(); ?>
   </div>
   
 </section>
-
+<!-- affichage des sous topic et commentaire de l'user -->
 <?php if (empty($sous_topic)) { ?>
 
   <?php } else { ?>
-    <div>
+    <div class="container_suppr">
       <h2>Ici vos Sous topic :</h2>
-      <div>
+      <div class="suppr">
       <?php for ( $i = 0 ; $i < count($sous_topic) ; $i++){ ?>
-        <div>
-          <p>le sous topic : <?= $sous_topic[$i]["name_sous"] ?></p>
-          <p>Votre question : <?= $sous_topic[$i]["question"] ?></p>
+        <div class="suppr_topic">
+          <p><span><?= $sous_topic[$i]["name_sous"] ?></span> </p>
+          <p>Votre question : <span><?= $sous_topic[$i]["question"] ?></span> </p>
           <a href="./?action=deletetopic&id=<?= $sous_topic[$i]["id_sous"]?>">Supprimer</a>
         </div>
       <?php } ?>
@@ -124,19 +120,16 @@ ob_start(); ?>
 <?php if (empty($comment)) { ?>
 
 <?php } else { ?>
-  <div>
+  <div class="container_suppr">
     <h2>Ici vos commentaire :</h2>
-    <div>
+    <div class="suppr">
       <?php for ( $i = 0 ; $i < count($comment) ; $i++){ ?>
-        <div>
-          <div>
-            <p>Le sous-topic : <?= $comment[$i]["name_sous"]  ?></p>
-          </div>
-          <div>
-            <p>Votre commentaire : <?= $comment[$i]["reponse"] ?></p>
+        <div class="suppr_topic">
+            <p> <span><?= $comment[$i]["name_sous"]  ?></span></p>
+            <p>Votre commentaire : <span> <?= $comment[$i]["reponse"] ?></span></p>
             <a href="./?action=deleteCom&id=<?= $comment[$i]["id_comment"] ?>">Supprimer</a>
           </div>
-        </div>
+        
         <?php } ?>
     </div>
   </div>

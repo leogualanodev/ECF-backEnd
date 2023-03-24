@@ -1,5 +1,7 @@
 <?php
 
+
+// on définie le nouveau format de la date du sous topic 
 $newdate = date(" d-m-Y à H:i", strtotime($data[0]['date_sous']));
 
 
@@ -26,7 +28,7 @@ if ( isset($_SESSION["pseudo"]) && !empty($_SESSION["pseudo"])){
 $zone_flot = '';
 
 ob_start(); ?>
-
+<!-- on affiche le sous topic -->
     <div class="container_discussion">
         <div id="img_pseudo">
             <div id="flex_image">
@@ -51,10 +53,12 @@ ob_start(); ?>
 if ( $data[0]["id_soustopic"] === null ){
 
 } else {
+    // on affiche les commentaire du sous topic
 for ( $i = 0 ; $i < count($data) ; $i++) {
+    // on définie les nouveau formats de date des commentaire 
     $newdatecomment =   date(" d-m-Y à H:i", strtotime($data[$i]["date"]));
 ?>
-<!-- on affiche les réponses du post -->
+
     
         <div class="container_comment">
             <div class="image_pseudo_comment">
@@ -75,6 +79,7 @@ for ( $i = 0 ; $i < count($data) ; $i++) {
 }
 ?>
 </div>
+<!-- si user connecté alors formulaire de post d'un commentaire -->
 <?php
 if ( isset($_SESSION["pseudo"]) && !empty($_SESSION["pseudo"])){ ?>
         <form id="form_comment" action="./?action=comment&id=<?= $data[0]["id_sous"] ?>" method='post'>

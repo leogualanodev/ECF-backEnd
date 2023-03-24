@@ -1,7 +1,10 @@
 <?php 
+// contenue HTML de la page principal du site 
+
 
 $title = 'chatForum' ;
 
+// si utilisateur connecté il peut accéder a son profil
 if ( isset($_SESSION["pseudo"]) && !empty($_SESSION["pseudo"])){
     ob_start(); ?>
     <div>
@@ -9,6 +12,7 @@ if ( isset($_SESSION["pseudo"]) && !empty($_SESSION["pseudo"])){
         <p>Bonjour <a id="profil" href="./?action=profil"><?= $_SESSION['pseudo'] ?></a></p>
     </div>
 <?php $nav = ob_get_clean(); 
+// si utilisateur non connecté bouton lui permettant de s'inscrire et de se connecter
 } else {
     ob_start(); ?>
     <div>
@@ -55,6 +59,7 @@ ob_start(); ?>
 <?php
 $content = ob_get_clean();
 
+// require template du site
 require_once __DIR__.'./../templates/mainTemp.php';
 
 

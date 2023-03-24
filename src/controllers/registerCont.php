@@ -3,7 +3,10 @@
 require_once __DIR__ . './../models/autoload.php';
 
 
-
+/**
+ * Fonction qui appelle la vue register
+ * Fonctin qui vérifie l'inscription d'un user
+ */
 function getViewRegister () {
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 

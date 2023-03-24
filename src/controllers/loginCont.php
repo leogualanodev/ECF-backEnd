@@ -2,6 +2,11 @@
 
 require_once __DIR__ . './../models/autoload.php';
 
+
+/**
+ * Fonction qui appelle la vue login
+ * fonction qui vérifie la connexion de l'user sur le site 
+ */
 function getViewLogin () {
     if ( $_SERVER['REQUEST_METHOD'] === 'POST'){
 
@@ -43,12 +48,13 @@ function getViewLogin () {
             } else {
                 $user = $felin->getInfoFelin($pseudo);
                 if (password_verify($password , $user[0]['password'])) {
+                    // définie les $_SESSION  de l'user
                     $_SESSION['pseudo'] = $user[0]["pseudo"];
                     $_SESSION['avatar'] = $user[0]["avatar"];
                     $_SESSION['id'] = $user[0]["id"];
                     $_SESSION['mail'] = $user[0]["mail"];
 
-                    header('location: index.php');
+                    header('location: ./');
 
                 } else {
                     $errors['error'] = 'Identifient ou mot de passe incorrect';

@@ -1,5 +1,6 @@
 <?php
-// session_start();
+
+// Controller qui va gérer les actions sur le profil de l'user
 
 require_once __DIR__ . './../models/autoload.php';
 
@@ -8,9 +9,10 @@ if(empty($_SESSION['pseudo'])){
   header('location: ./');
 }
 
-
+/**
+ * Fonction qui appelle la vue profil de l'user
+ */
 function getViewProfi() {
-    // ici récupérer les topics de l'utilisateur
     $id = $_SESSION["id"];
     $felin = new Felins();
     $comment = $felin-> getCommentProfil($id);
@@ -19,6 +21,10 @@ function getViewProfi() {
 
 }
 
+/**
+ * Fonction qui redirige vers la page profil 
+ * Fonction qui va vérifier la modification des infos de l'user 
+ */
 function getModifInfo () {
   if($_SERVER['REQUEST_METHOD'] === 'POST'){
     
@@ -76,7 +82,10 @@ function getModifInfo () {
   header('location: ./?action=profil');
 }
 
-
+/**
+ * Fonction qui redirige vers la page profil
+ * Fonction qui vérifie la modification du mot de passe de l'user
+ */
 function getModifPassword() {
   if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $patternPassword = '/^(?=.*[0-9])(?=.*[A-Z]).{8,20}$/';  
@@ -118,47 +127,67 @@ function getModifPassword() {
   header('location: ./?action=profil');
 }
 
-
+/**
+ * Fonction qui supprime un commetaire de l'user (par l'user)
+ * fonction qui redirige vers la page profil
+ * @param int $id id du commentaire 
+ */
 function getDeleteComment ($id) {
   $topic = new Topics();
   $topic->deleteComment($id);
   header('location: ./?action=profil');
 }
 
-
+/**
+ * Fonction qui supprime un sous topic de l'user (par l'user)
+ * fonction qui redirige vers la page profil
+ * @param int $id id du sous topic 
+ */
 function getDeleteTopic ($id) {
   $topic = new Topics();
   $topic->deleteTopic($id);
   header('location: ./?action=profil');
 }
 
+/**
+ * Fonction qui redirige vers la page profil
+ * Fonction qui vérifie la modification de l'avatar de l'user (par l'user)
+ */
 function getModifAvatar () {
   if($_SERVER['REQUEST_METHOD'] === 'POST'){
     
-    
+    // définie le chemin dans lequel le fichier sera upload
     $cheminPicture = 'C:\wamp64\www\ECF-backEnd\public\image\imports\\';
     $avatar = $_FILES['post'];
     
+
     $tmp_name = $avatar['tmp_name'] ?? '';
     $type = $avatar['type'] ?? '';
     $name = $avatar['name'] ?? '';
     $name = md5($name);
     $chemin_final_picture = "$cheminPicture"."$name" ;
     
+    // id de l'user 
     $id = $_SESSION['id'];
 
+    // session d'erreur et de validation
     $_SESSION['erreurAvatar'] = '' ;
     $_SESSION['validateAvatar'] = '' ;
 
+
+    // vérification si il y a un fichier, que le fichier est inferieur à 5mo , et le type de fichier 
     if ( $avatar["size"] === 0 ){
       $_SESSION['erreurAvatar'] = 'veuillez choisir un fichier';
     } else if ( $avatar["size"] > 5000000 ) {
       $_SESSION['erreurAvatar'] = 'Votre fichier ne doit pas dépasser 5Mo';
     } else if ( $avatar['type'] == 'image/jpeg' ){
+      // si fichier est jpeg
         $felin = new Felins ();
         $name = $name.'.jpeg';
         $_SESSION['avatar'] = $name ;
+        // on modifer l'avatar dans la base de donné
         $felin->modifAvatarFelin( $name , $id );
+        // on upload le fichier dans notre dossier
         move_uploaded_file($tmp_name , $chemin_final_picture.'.jpeg');
         $_SESSION['validateAvatar'] = 'Avatar modifié' ;
         

@@ -733,5 +733,54 @@ footer p {
     color: #df4937 !important;
 }
 
+/**************** STYLE PROFIL SUPPRESSION COMMENT ET TOPICS **************/ 
+
+
+.container_suppr {
+    max-width: 1240px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.suppr {
+    margin-top: 25px;
+}
+
+.suppr_topic {
+    background-color: #eeeeee;
+    padding: 10px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.suppr_topic p span {
+    font-size: 17px;
+}
+
+.suppr_topic p:first-child {
+    color: #df4937;
+    font-weight: bold;
+}
+
+.suppr_topic a {
+    
+    background-color: #ffffff;
+    text-decoration: none;
+    border: 1px solid #df4937;
+    padding: 5px;
+    border-radius: 5px;
+    color: rgb(0, 0, 0);
+}
+
+.suppr_topic a:hover{
+    background-color: #df4937;
+    color: black;
+}
+
+.suppr_topic :nth-child(2) {
+    margin-bottom: 15px;
+}
+
+
+
 
 

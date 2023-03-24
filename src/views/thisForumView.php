@@ -25,7 +25,7 @@ ob_start(); ?>
 <?php
 if (isset($_SESSION["pseudo"]) && !empty($_SESSION["pseudo"])){ ?>
     
-    
+    <!-- si user connecté , formulaire de création d'un sous topic -->
     <form id="form_post" action="./?action=post&id=<?= $data[0]['id'] ?>" method='post'>
         <h2>Parle du sujet, lance toi !! </h2>
         <?php if ( !empty($errors["erreur"])) { ?>
@@ -49,7 +49,7 @@ if ( $data[0]["question"] === null){
     ob_start(); ?>
     <h2 id="h2_soustopic">Les différents sujet de nos amis Félins :</h2>
     <div id="container_soustopic">
-    
+    <!-- on affiche les sous topics -->
  <?php   for ( $i = 0 ; $i < count($data) ; $i++ ) {
         $new_date = date(" d-m-Y à H:i", strtotime($data[$i]['date_sous']));?>
         <div class="soustopic">
