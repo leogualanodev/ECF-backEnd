@@ -45,22 +45,22 @@ function getModifInfo () {
     // Vérification et modification si vérif passé 
     if (empty($pseudo)) {
       $_SESSION['erreurInfo'] = "veuillez remplir un nouveau pseudo";
-      header('location: ./?action=profil');
+      header('location: ./profil');
       
     } 
     if (!preg_match($patternLetterNumbers, $pseudo)) {
       $_SESSION['erreurInfo'] = "Caractères invalide";
-      header('location: ./?action=profil');
+      header('location: ./profil');
     }
       
     if (empty($mail)) {
       $_SESSION['erreurInfo'] = "veuillez remplir un nouvel email" ;
-      header('location: ./?action=profil');
+      header('location: ./profil');
     }
       
     if (!filter_var($mail, FILTER_VALIDATE_EMAIL)){
       $_SESSION['erreurInfo'] = "email invalide";
-      header('location: ./?action=profil');
+      header('location: ./profil');
     }
       
     if ($_SESSION["erreurInfo"] === "" ){
@@ -79,7 +79,7 @@ function getModifInfo () {
     
   }
 
-  header('location: ./?action=profil');
+  header('location: ./profil');
 }
 
 /**
@@ -124,7 +124,7 @@ function getModifPassword() {
     }
       
   }
-  header('location: ./?action=profil');
+  header('location: ./profil');
 }
 
 /**
@@ -135,7 +135,7 @@ function getModifPassword() {
 function getDeleteComment ($id) {
   $topic = new Topics();
   $topic->deleteComment($id);
-  header('location: ./?action=profil');
+  header('location: ./profil');
 }
 
 /**
@@ -146,7 +146,7 @@ function getDeleteComment ($id) {
 function getDeleteTopic ($id) {
   $topic = new Topics();
   $topic->deleteTopic($id);
-  header('location: ./?action=profil');
+  header('location: ./profil');
 }
 
 /**
@@ -198,7 +198,7 @@ function getModifAvatar () {
         $felin->modifAvatarFelin( $name , $id );
         move_uploaded_file($tmp_name , $chemin_final_picture.'.png');
         $_SESSION['validateAvatar'] = 'Avatar modifié' ;
-        echo "coucou";
+        
     } else if ( $avatar['type'] == 'image/gif'){
         $felin = new Felins ();
         $name = $name.'.gif';
@@ -222,5 +222,5 @@ function getModifAvatar () {
 
     
   }
-  header('Location: ./?action=profil');
+  header('Location: ./profil');
 }

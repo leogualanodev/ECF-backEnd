@@ -29,4 +29,10 @@ Veuillez récupérer le code qui se situe sur ce repositorie.
 Vous aurez besoin de simuler un serveur, vous pouvez télécharger **WAMP** si vous êtes sur windows
 Veuillez créer la base de donnée sur phpMyAdmin "chatforum". 
 Vous pouvez maintenant importer le fichier chatforum.sql dans votre base de donnée.
-Veillez à vérifier les informations de connexion à la base de données dans le code pour que cela fonctionne correctement.   
+Veillez à vérifier les informations de connexion à la base de données dans le code pour que cela fonctionne correctement. 
+
+**NB** : configurer wamp pour le fichier .htaccess
+#LoadModule rewrite_module modules/mod_rewrite.so => enlever le # dans le fichier httpd.conf de configuration apache
+cocher rewrite_module dans les modules de configuration apache
+
+

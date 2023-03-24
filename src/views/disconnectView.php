@@ -5,7 +5,7 @@ $title = 'Déconnexion' ;
 ob_start(); ?>
 
 <div>
-    <a class="button-home" href="./?action=connexion">Se connecter</a>
+    <a class="button-home" href="./connexion">Se connecter</a>
 </div>
 <?php
 $nav = ob_get_clean();

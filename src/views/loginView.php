@@ -5,7 +5,7 @@ $title = 'Connexion' ;
 ob_start(); ?>
 
 <div>
-    <a class="button-home" href="./?action=inscription">S'inscrire</a>
+    <a class="button-home" href="./inscription">S'inscrire</a>
 </div>
 <?php
 $nav = ob_get_clean();

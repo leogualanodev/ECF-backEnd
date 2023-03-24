@@ -20,7 +20,7 @@
         </div>
         <div id="menu">          
             <a href="./">Accueil</a>
-            <a href="./?action=forum">Forum</a> 
+            <a href="./forum">Forum</a> 
         </div>
         <div id="nav">
             <?= $nav ?>

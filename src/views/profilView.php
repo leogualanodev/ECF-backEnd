@@ -75,11 +75,11 @@ ob_start(); ?>
       </div>
       <div>
         <p>Mot de passe :</p>
-        <input type="text" name="mdp1">
+        <input type="password" name="mdp1">
       </div>
       <div>
         <p>Confirmer votre Mot de passe :</p>
-        <input type="text" name="mdp2">
+        <input type="password" name="mdp2">
       </div>
       <div>
         <input class="modifier-info" type="submit" value="Modifier">

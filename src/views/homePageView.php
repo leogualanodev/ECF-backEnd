@@ -9,15 +9,15 @@ if ( isset($_SESSION["pseudo"]) && !empty($_SESSION["pseudo"])){
     ob_start(); ?>
     <div>
         <img src="" alt="">
-        <p>Bonjour <a id="profil" href="./?action=profil"><?= $_SESSION['pseudo'] ?></a></p>
+        <p>Bonjour <a id="profil" href="./profil"><?= $_SESSION['pseudo'] ?></a></p>
     </div>
 <?php $nav = ob_get_clean(); 
 // si utilisateur non connecté bouton lui permettant de s'inscrire et de se connecter
 } else {
     ob_start(); ?>
     <div>
-        <a class="button-home" href="./?action=connexion"> Se connecter</a>
-        <a class="button-home" href="./?action=inscription">S'inscrire</a>
+        <a class="button-home" href="./connexion"> Se connecter</a>
+        <a class="button-home" href="./inscription">S'inscrire</a>
     </div>
 
     <?php $nav = ob_get_clean();
@@ -29,10 +29,10 @@ ob_start(); ?>
     <div id="container_zone_flot">
         <h1>Bienvenue sur le <span>ChatForum</span> , un forum pour la conquête du monde par la race feline</h1>
         <?php if ( isset($_SESSION["pseudo"]) && !empty($_SESSION["pseudo"]) ) { ?>
-            <a href="./?action=forum">Viens conquérir le monde</a>
+            <a href="./forum">Viens conquérir le monde</a>
         <?php
         } else { ?>
-            <a href="./?action=connexion">Viens conquérir le monde</a>
+            <a href="./connexion">Viens conquérir le monde</a>
         <?php
         } ?>
         

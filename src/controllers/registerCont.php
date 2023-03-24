@@ -88,7 +88,7 @@ function getViewRegister () {
             $result = $felin->checkIfFelinExist($pseudo , $mail);
             if ( empty($result)){
                 $felin->felinRegistred($pseudo , $mail , $passwordhash);
-                header( 'location: index.php?action=connexion');
+                header( 'location: ./connexion');
             }   
             
         }
