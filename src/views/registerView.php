@@ -14,7 +14,7 @@ $zone_flot = '';
 ob_start(); ?>
 
 <!-- affiche le formulaire d'inscription -->
-    <form id="register" action="index.php?action=inscription" method="post">
+    <form id="register" action="./inscription" method="post">
         <h1 id="h1_register">Un chat qui s'inscrit ..</h1>
         <div id="inputs">
             <div>

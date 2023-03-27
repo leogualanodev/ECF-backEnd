@@ -127,7 +127,7 @@ ob_start(); ?>
         <div class="suppr_topic">
             <p> <span><?= $comment[$i]["name_sous"]  ?></span></p>
             <p>Votre commentaire : <span> <?= $comment[$i]["reponse"] ?></span></p>
-            <a href="./?action=deleteCom&id=<?= $comment[$i]["id_comment"] ?>">Supprimer</a>
+            <a href="http://localhost/ECF-backEnd/?action=deleteCom&id=<?= $comment[$i]["id_comment"] ?>">Supprimer</a>
           </div>
         
         <?php } ?>

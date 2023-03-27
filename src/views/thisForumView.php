@@ -8,14 +8,14 @@ if ( isset($_SESSION["pseudo"]) && !empty($_SESSION["pseudo"])){
     ob_start(); ?>
     <div>
         <img src="" alt="">
-        <p>Bonjour <a id="profil" href="./profil"><?= $_SESSION['pseudo'] ?></a></p>
+        <p>Bonjour <a id="profil" href="http://localhost/ECF-backEnd/profil"><?= $_SESSION['pseudo'] ?></a></p>
     </div>
 <?php $nav = ob_get_clean(); 
 } else {
     ob_start(); ?>
     <div>
-        <a class="button-home" href="./connexion"> Se connecter</a>
-        <a class="button-home" href="./inscription">S'inscrire</a>
+        <a class="button-home" href="http://localhost/ECF-backEnd/connexion"> Se connecter</a>
+        <a class="button-home" href="http://localhost/ECF-backEnd/inscription">S'inscrire</a>
     </div>
 
     <?php $nav = ob_get_clean();
@@ -26,7 +26,7 @@ ob_start(); ?>
 if (isset($_SESSION["pseudo"]) && !empty($_SESSION["pseudo"])){ ?>
     
     <!-- si user connecté , formulaire de création d'un sous topic -->
-    <form id="form_post" action="./?action=post&id=<?= $data[0]['id'] ?>" method='post'>
+    <form id="form_post" action="http://localhost/ECF-backEnd/?action=post&id=<?= $data[0]['id'] ?>" method='post'>
         <h2>Parle du sujet, lance toi !! </h2>
         <?php if ( !empty($errors["erreur"])) { ?>
                     <div class="erreur"> <?= $errors['erreur'] ?></div>
@@ -61,7 +61,7 @@ if ( $data[0]["question"] === null){
                 <p><?= $data[$i]['question'] ?></p>
             </div>
             <div>
-                <a href="./?action=discussion&id=<?= $data[$i]['id_sous']  ?>">Voir</a>
+                <a href="http://localhost/ECF-backEnd/discussion/<?= $data[$i]['id_sous']  ?>">Voir</a>
             </div>
         </div>
     

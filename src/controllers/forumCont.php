@@ -124,5 +124,5 @@ function getViewComment ($id_soustopic , $id_user) {
         }
     }
     // on redirige l'utilisateur vers la page de la discussion 
-    header("location: ./?action=discussion&id=$id_soustopic");
+    header("location: http://localhost/ECF-backEnd/discussion/$id_soustopic");
 }

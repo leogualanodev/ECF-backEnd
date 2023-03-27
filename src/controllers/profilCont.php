@@ -135,7 +135,7 @@ function getModifPassword() {
 function getDeleteComment ($id) {
   $topic = new Topics();
   $topic->deleteComment($id);
-  header('location: ./profil');
+  header('location: http://localhost/ECF-backEnd/profil');
 }
 
 /**
@@ -146,7 +146,7 @@ function getDeleteComment ($id) {
 function getDeleteTopic ($id) {
   $topic = new Topics();
   $topic->deleteTopic($id);
-  header('location: ./profil');
+  header('location: http://localhost/ECF-backEnd/profil');
 }
 
 /**

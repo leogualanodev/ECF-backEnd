@@ -1,9 +1,9 @@
 RewriteEngine On
-RewriteBase /ECF-backEnd/
 
 
 
-# RewriteRule ^([a-z]+)/([0-9]+)$ ?action=$1&id=$2 [L]
+
+RewriteRule ^([a-z]+)/([0-9]+)$ ?action=$1&id=$2 [L]
 # cette regle fonctionne mais ne me charge pas le css et les liens du site sont plus bon
 # en particulier les liens entre chaque page
 

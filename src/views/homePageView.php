@@ -9,15 +9,15 @@ if ( isset($_SESSION["pseudo"]) && !empty($_SESSION["pseudo"])){
     ob_start(); ?>
     <div>
         <img src="" alt="">
-        <p>Bonjour <a id="profil" href="./profil"><?= $_SESSION['pseudo'] ?></a></p>
+        <p>Bonjour <a id="profil" href="http://localhost/ECF-backEnd/profil"><?= $_SESSION['pseudo'] ?></a></p>
     </div>
 <?php $nav = ob_get_clean(); 
 // si utilisateur non connecté bouton lui permettant de s'inscrire et de se connecter
 } else {
     ob_start(); ?>
     <div>
-        <a class="button-home" href="./connexion"> Se connecter</a>
-        <a class="button-home" href="./inscription">S'inscrire</a>
+        <a class="button-home" href="http://localhost/ECF-backEnd/connexion"> Se connecter</a>
+        <a class="button-home" href="http://localhost/ECF-backEnd/inscription">S'inscrire</a>
     </div>
 
     <?php $nav = ob_get_clean();
@@ -29,10 +29,10 @@ ob_start(); ?>
     <div id="container_zone_flot">
         <h1>Bienvenue sur le <span>ChatForum</span> , un forum pour la conquête du monde par la race feline</h1>
         <?php if ( isset($_SESSION["pseudo"]) && !empty($_SESSION["pseudo"]) ) { ?>
-            <a href="./forum">Viens conquérir le monde</a>
+            <a href="http://localhost/ECF-backEnd/forum">Viens conquérir le monde</a>
         <?php
         } else { ?>
-            <a href="./connexion">Viens conquérir le monde</a>
+            <a href="http://localhost/ECF-backEnd/connexion">Viens conquérir le monde</a>
         <?php
         } ?>
         
@@ -45,7 +45,7 @@ ob_start(); ?>
             <h2>Notre Projet les amis les chats ..</h2>
             <div>
                 <figure>
-                    <img src="./public/image/imports/cat_weapon.jpg" alt="">
+                    <img src="http://localhost/ECF-backEnd/public/image/imports/cat_weapon.jpg" alt="">
                 </figure>
                 
                 <p>Notre projet consiste à créer un forum de discussion en ligne dédié à la conquête de la race féline sur la race humaine. Ce forum sera exclusivement réservé aux chats et toute personne qui n'est pas un chat se verra interdire l'accès en se faisant griffer virtuellement.</br>

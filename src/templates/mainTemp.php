@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./public/css/style.css">
+    <link rel="stylesheet" href="http://localhost/ECF-backEnd/public/css/style.css">
     <title><?= $title ?></title>
 </head>
 <body>
@@ -15,12 +15,12 @@
 <header>
     <nav>
         <div id="logo">
-            <img src="./public/image/imports/logo.jpg" alt="logo-forum">
+            <img src="http://localhost/ECF-backEnd/public/image/imports/logo.jpg" alt="logo-forum">
             <p>ChatForum</p>
         </div>
         <div id="menu">          
-            <a href="./">Accueil</a>
-            <a href="./forum">Forum</a> 
+            <a href="http://localhost/ECF-backEnd">Accueil</a>
+            <a href="http://localhost/ECF-backEnd/forum">Forum</a> 
         </div>
         <div id="nav">
             <?= $nav ?>
@@ -36,10 +36,10 @@
 <footer>
     <div>
         <a href="https://github.com/leogualanodev">
-            <img src="./public/image/imports/github.png" alt="">
+            <img src="http://localhost/ECF-backEnd/public/image/imports/github.png" alt="">
         </a>
         <a href="https://www.wired.com/images_blogs/dangerroom/images/2007/06/20/cat_sniper.jpg">
-            <img src="./public/image/imports/cat.png" alt="">
+            <img src="http://localhost/ECF-backEnd/public/image/imports/cat.png" alt="">
         </a>
     </div>
     <div>
